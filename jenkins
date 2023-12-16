@@ -1,20 +1,19 @@
 pipeline {
     agent {
         docker {
-            // Define the Docker image you want to use
-            image 'node:16-alphine'
-            // Other configuration options like registry credentials, etc., can be added here
+            // Use the 'alpine' Docker image as an example
+            image 'alpine:latest'
         }
     }
     stages {
-        stage('test') {
+        stage('Print Hello World') {
             steps {
-                sh 'node --version'
-                    
-                    }
-                    
-                }
+                sh 'echo "Hello, World!"'
             }
         }
-        // Add more stages as needed
+        // You can add more stages here if needed
+    }
+    // Post-build actions, etc., can be defined here
+}
+
   
